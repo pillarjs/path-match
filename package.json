@@ -1,0 +1,32 @@
+{
+  "name": "path-match",
+  "description": "wrapper around path-to-regexp for easy route parameters",
+  "version": "1.0.0",
+  "author": {
+    "name": "Jonathan Ong",
+    "email": "me@jongleberry.com",
+    "url": "http://jongleberry.com",
+    "twitter": "https://twitter.com/jongleberry"
+  },
+  "keywords": [
+    "route",
+    "router",
+    "routing",
+    "path",
+    "regex",
+    "regexp",
+    "param",
+    "params"
+  ],
+  "license": "MIT",
+  "repository": "expressjs/path-exec",
+  "dependencies": {
+    "path-to-regexp": "*"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec"
+  }
+}
