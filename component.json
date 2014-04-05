@@ -13,7 +13,7 @@
     "params"
   ],
   "license": "MIT",
-  "repository": "expressjs/path-exec",
+  "repository": "expressjs/path-match",
   "dependencies": {
     "path-to-regexp": "*"
   },
