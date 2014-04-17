@@ -46,3 +46,36 @@ describe('/:a/b/:c?', function () {
     })
   })
 })
+
+describe('/:a/:b/:c*', function () {
+  var match = route('/:a/:b/:c*')
+
+  it('/a/b/c', function () {
+    var params = match('/a/b/c')
+    assert.deepEqual(params, {
+      a: 'a',
+      b: 'b',
+      c: 'c',
+    })
+  })
+
+  it('/a/b/c/d', function () {
+    var params = match('/a/b/c/d')
+    assert.deepEqual(params, {
+      a: 'a',
+      b: 'b',
+      c: 'c',
+      tail: '/d'
+    })
+  })
+
+  it('/a/b/c/d/e', function () {
+    var params = match('/a/b/c/d/e')
+    assert.deepEqual(params, {
+      a: 'a',
+      b: 'b',
+      c: 'c',
+      tail: '/d/e'
+    })
+  })
+})
