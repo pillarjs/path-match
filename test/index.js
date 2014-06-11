@@ -31,6 +31,7 @@ it('/:a/b/:c', function () {
 
 describe('/:a/b/:c?', function () {
   var match = route('/:a/b/:c?');
+
   it('/a/b/c', function () {
     var params = match('/a/b/c');
     assert.deepEqual(params, {
@@ -50,12 +51,20 @@ describe('/:a/b/:c?', function () {
 describe('/:a/:b/:c*', function () {
   var match = route('/:a/:b/:c*')
 
+  it('/a/b', function () {
+    var params = match('/a/b')
+    assert.deepEqual(params, {
+      a: 'a',
+      b: 'b',
+    })
+  })
+
   it('/a/b/c', function () {
     var params = match('/a/b/c')
     assert.deepEqual(params, {
       a: 'a',
       b: 'b',
-      c: 'c',
+      c: ['c'],
     })
   })
 
@@ -64,8 +73,7 @@ describe('/:a/:b/:c*', function () {
     assert.deepEqual(params, {
       a: 'a',
       b: 'b',
-      c: 'c',
-      tail: '/d'
+      c: ['c', 'd']
     })
   })
 
@@ -74,8 +82,43 @@ describe('/:a/:b/:c*', function () {
     assert.deepEqual(params, {
       a: 'a',
       b: 'b',
-      c: 'c',
-      tail: '/d/e'
+      c: ['c', 'd', 'e']
+    })
+  })
+})
+
+describe('/:a/:b/:c+', function () {
+  var match = route('/:a/:b/:c+')
+
+  it('/a/b', function () {
+    var params = match('/a/b')
+    assert.deepEqual(params, false)
+  })
+
+  it('/a/b/c', function () {
+    var params = match('/a/b/c')
+    assert.deepEqual(params, {
+      a: 'a',
+      b: 'b',
+      c: ['c'],
+    })
+  })
+
+  it('/a/b/c/d', function () {
+    var params = match('/a/b/c/d')
+    assert.deepEqual(params, {
+      a: 'a',
+      b: 'b',
+      c: ['c', 'd']
+    })
+  })
+
+  it('/a/b/c/d/e', function () {
+    var params = match('/a/b/c/d/e')
+    assert.deepEqual(params, {
+      a: 'a',
+      b: 'b',
+      c: ['c', 'd', 'e']
     })
   })
 })

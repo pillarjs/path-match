@@ -21,7 +21,7 @@
   "license": "MIT",
   "repository": "expressjs/path-match",
   "dependencies": {
-    "path-to-regexp": "*"
+    "path-to-regexp": "~0.2.1"
   },
   "devDependencies": {
     "mocha": "*"

@@ -14,15 +14,14 @@ module.exports = function (options) {
 
       params = params || {};
 
-      var x, param;
+      var key, param;
       for (var i = 0; i < keys.length; i++) {
-        param = m[x = i + 1];
+        key = keys[i];
+        param = m[i + 1];
         if (!param) continue;
-        params[keys[i].name] = decodeParam(param);
+        params[key.name] = decodeParam(param);
+        if (key.repeat) params[key.name] = params[key.name].split(key.delimiter)
       }
-
-      var tail = m.slice(++x).join('/');
-      if (tail) params.tail = tail;
 
       return params;
     }
