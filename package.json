@@ -1,7 +1,7 @@
 {
   "name": "path-match",
   "description": "wrapper around path-to-regexp for easy route parameters",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "author": {
     "name": "Jonathan Ong",
     "email": "me@jongleberry.com",
@@ -19,7 +19,7 @@
     "params"
   ],
   "license": "MIT",
-  "repository": "expressjs/path-match",
+  "repository": "pillarjs/path-match",
   "dependencies": {
     "path-to-regexp": "1"
   },
@@ -32,5 +32,7 @@
     "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot",
     "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot"
   },
-  "files": ["index.js"]
+  "files": [
+    "index.js"
+  ]
 }
