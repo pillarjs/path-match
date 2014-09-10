@@ -3,6 +3,17 @@ var assert = require('assert');
 
 var route = require('..')();
 
+it('/%%%', function () {
+  var match = route('/:a');
+  try {
+    match('/%%%');
+    throw new Error('jklajsldkfjasdf');
+  } catch (err) {
+    assert(~err.message.indexOf('"%%%"'));
+    assert.equal(err.status, 400);
+  }
+})
+
 it('/:a/:b', function () {
   var match = route('/:a/:b');
   var params = match('/a/b');
