@@ -1,7 +1,7 @@
 {
   "name": "path-match",
   "description": "wrapper around path-to-regexp for easy route parameters",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "author": {
     "name": "Jonathan Ong",
     "email": "me@jongleberry.com",
