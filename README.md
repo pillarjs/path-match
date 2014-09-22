@@ -1,7 +1,6 @@
 # path match
 
 [![NPM version][npm-image]][npm-url]
-[![Latest tag][github-tag]][github-url]
 [![Build status][travis-image]][travis-url]
 [![Test coverage][coveralls-image]][coveralls-url]
 [![Dependency Status][david-image]][david-url]
