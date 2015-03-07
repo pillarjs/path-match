@@ -10,7 +10,6 @@ it('/%%%', function () {
     throw new Error('jklajsldkfjasdf');
   } catch (err) {
     assert(~err.message.indexOf('"%%%"'));
-    assert.equal(err.status, 400);
   }
 })
 
