@@ -1,6 +1,5 @@
 
 var pathToRegexp = require('path-to-regexp');
-var createError = require('http-errors');
 
 module.exports = function (options) {
   options = options || {};
@@ -33,6 +32,6 @@ function decodeParam(param) {
   try {
     return decodeURIComponent(param);
   } catch (_) {
-    throw createError(400, 'failed to decode param "' + param + '"');
+    throw new Error('failed to decode param "' + param + '"');
   }
 }
