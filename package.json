@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "istanbul": "0",
-    "mocha": "1"
+    "mocha": "2"
   },
   "scripts": {
     "test": "mocha --reporter spec",
