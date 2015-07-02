@@ -6,7 +6,6 @@
 [![Dependency Status][david-image]][david-url]
 [![License][license-image]][license-url]
 [![Downloads][downloads-image]][downloads-url]
-[![Gittip][gittip-image]][gittip-url]
 
 Thin wrapper around [path-to-regexp](https://github.com/component/path-to-regexp) to make extracting the param names easier.
 
@@ -54,5 +53,3 @@ require('http').createServer(function (req, res) {
 [license-url]: LICENSE.md
 [downloads-image]: http://img.shields.io/npm/dm/path-match.svg?style=flat-square
 [downloads-url]: https://npmjs.org/package/path-match
-[gittip-image]: https://img.shields.io/gittip/jonathanong.svg?style=flat-square
-[gittip-url]: https://www.gittip.com/jonathanong/
