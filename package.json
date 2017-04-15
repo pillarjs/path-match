@@ -25,13 +25,17 @@
     "path-to-regexp": "^1.7.0"
   },
   "devDependencies": {
+    "@types/mocha": "^2.2.40",
+    "@types/node": "^7.0.12",
     "istanbul": "^0.4.5",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "ts-node": "^3.0.2",
+    "typescript": "^2.2.2"
   },
   "scripts": {
-    "test": "mocha --reporter spec",
-    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot",
-    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot"
+    "test": "mocha --require ts-node/register -R spec test/index.ts",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --require ts-node/register -R dot test/index.ts",
+    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --require ts-node/register -R dot test/index.ts"
   },
   "files": [
     "index.js",

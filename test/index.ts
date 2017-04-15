@@ -1,7 +1,9 @@
 
-var assert = require('assert');
+import assert = require('assert');
 
-var route = require('..')();
+import matchPath = require('..');
+
+var route = matchPath();
 
 it('/%%%', function () {
   var match = route('/:a');
