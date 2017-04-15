@@ -21,12 +21,12 @@
   "license": "MIT",
   "repository": "pillarjs/path-match",
   "dependencies": {
-    "http-errors": "~1.4.0",
-    "path-to-regexp": "^1.0.0"
+    "http-errors": "~1.6.1",
+    "path-to-regexp": "^1.7.0"
   },
   "devDependencies": {
-    "istanbul": "^0.4.2",
-    "mocha": "^2.0.0"
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0"
   },
   "scripts": {
     "test": "mocha --reporter spec",
