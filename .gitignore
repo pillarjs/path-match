@@ -4,4 +4,10 @@
 *.gz
 
 node_modules
+
+# Nyc directories
 coverage
+.nyc_output
+
+# Compiled test file
+test/index.js

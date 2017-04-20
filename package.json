@@ -27,15 +27,14 @@
   "devDependencies": {
     "@types/mocha": "^2.2.40",
     "@types/node": "^7.0.12",
-    "istanbul": "^0.4.5",
     "mocha": "^3.2.0",
-    "ts-node": "^3.0.2",
+    "nyc": "^10.2.0",
     "typescript": "^2.2.2"
   },
   "scripts": {
-    "test": "mocha --require ts-node/register -R spec test/index.ts",
-    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --require ts-node/register -R dot test/index.ts",
-    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --require ts-node/register -R dot test/index.ts"
+    "test": "tsc test/index.ts && mocha -R spec test/index.js",
+    "test-cov": "nyc npm test",
+    "test-travis": "nyc --reporter=lcov npm test"
   },
   "files": [
     "index.js",
