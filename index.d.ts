@@ -18,7 +18,7 @@ declare namespace pathMatch {
    * otherwise it returns a paramName -> paramValue map of the matched
    * parameters
    */
-  export type MatchFunction = (pathname: string, params?: object) => false | ParamsMap;
+  export type MatchFunction = (pathname: string, params?: ParamsMap) => false | ParamsMap;
 
   /**
    * Get a match function for the given path pattern
