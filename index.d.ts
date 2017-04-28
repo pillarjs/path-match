@@ -1,4 +1,4 @@
-import {ParseOptions, Path, RegExpOptions} from "path-to-regexp";
+import { ParseOptions, Path, RegExpOptions } from 'path-to-regexp';
 
 /**
  * Get a route function configured with the given options
@@ -7,9 +7,8 @@ import {ParseOptions, Path, RegExpOptions} from "path-to-regexp";
 declare function pathMatch (options?: RegExpOptions & ParseOptions): pathMatch.RouteFunction;
 
 declare namespace pathMatch {
-
   export type ParamsMap = {
-      [key: string]: string | string[];
+    [key: string]: string | string[];
   }
 
   /**
@@ -24,7 +23,6 @@ declare namespace pathMatch {
    * Get a match function for the given path pattern
    */
   export type RouteFunction = (path: Path) => MatchFunction;
-
 }
 
 export = pathMatch;
