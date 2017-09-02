@@ -1,3 +1,4 @@
+'use strict';
 
 var pathToRegexp = require('path-to-regexp');
 var createError = require('http-errors');
