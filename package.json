@@ -25,13 +25,19 @@
     "path-to-regexp": "^1.0.0"
   },
   "devDependencies": {
-    "istanbul": "^0.4.2",
-    "mocha": "^2.0.0"
+    "codecov": "^3.6.5",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.0.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "jest": "^25.3.0"
   },
   "scripts": {
-    "test": "mocha --reporter spec",
-    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot",
-    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot"
+    "eslint": "eslint . --ignore-path .gitignore",
+    "test": "jest"
   },
   "files": [
     "index.js"
