@@ -1,60 +1,60 @@
 
-var assert = require('assert');
+var assert = require('assert')
 
-var route = require('..')();
+var route = require('..')()
 
 it('/%%%', function () {
-  var match = route('/:a');
+  var match = route('/:a')
   try {
-    match('/%%%');
-    throw new Error('jklajsldkfjasdf');
+    match('/%%%')
+    throw new Error('jklajsldkfjasdf')
   } catch (err) {
-    assert(~err.message.indexOf('"%%%"'));
-    assert.equal(err.status, 400);
+    assert(~err.message.indexOf('"%%%"'))
+    assert.equal(err.status, 400)
   }
 })
 
 it('/:a/:b', function () {
-  var match = route('/:a/:b');
-  var params = match('/a/b');
+  var match = route('/:a/:b')
+  var params = match('/a/b')
   assert.deepEqual(params, {
     a: 'a',
-    b: 'b',
+    b: 'b'
   })
 })
 
 it('/:a/b', function () {
-  var match = route('/:a/b');
-  var params = match('/a/b');
+  var match = route('/:a/b')
+  var params = match('/a/b')
   assert.deepEqual(params, {
-    a: 'a',
+    a: 'a'
   })
 })
 
 it('/:a/b/:c', function () {
-  var match = route('/:a/b/:c');
-  var params = match('/a/b/c');
+  var match = route('/:a/b/:c')
+  var params = match('/a/b/c')
   assert.deepEqual(params, {
     a: 'a',
-    c: 'c',
+    c: 'c'
   })
 })
 
 describe('/:a/b/:c?', function () {
-  var match = route('/:a/b/:c?');
+  var match = route('/:a/b/:c?')
 
   it('/a/b/c', function () {
-    var params = match('/a/b/c');
+    var params = match('/a/b/c')
     assert.deepEqual(params, {
       a: 'a',
-      c: 'c',
+      c: 'c'
     })
   })
 
   it('/a/b', function () {
-    var params = match('/a/b');
+    var params = match('/a/b')
     assert.deepEqual(params, {
-      a: 'a',
+      a: 'a'
     })
   })
 })
@@ -66,7 +66,7 @@ describe('/:a/:b/:c*', function () {
     var params = match('/a/b')
     assert.deepEqual(params, {
       a: 'a',
-      b: 'b',
+      b: 'b'
     })
   })
 
@@ -75,7 +75,7 @@ describe('/:a/:b/:c*', function () {
     assert.deepEqual(params, {
       a: 'a',
       b: 'b',
-      c: ['c'],
+      c: ['c']
     })
   })
 
@@ -111,7 +111,7 @@ describe('/:a/:b/:c+', function () {
     assert.deepEqual(params, {
       a: 'a',
       b: 'b',
-      c: ['c'],
+      c: ['c']
     })
   })
 
