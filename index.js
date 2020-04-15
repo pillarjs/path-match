@@ -1,5 +1,5 @@
 
-var pathToRegexp = require('path-to-regexp')
+var { pathToRegexp } = require('path-to-regexp')
 var createError = require('http-errors')
 
 module.exports = function (options) {

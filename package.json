@@ -21,8 +21,8 @@
   "license": "MIT",
   "repository": "pillarjs/path-match",
   "dependencies": {
-    "http-errors": "~1.4.0",
-    "path-to-regexp": "^1.0.0"
+    "http-errors": "^1.7.3",
+    "path-to-regexp": "^6.1.0"
   },
   "devDependencies": {
     "codecov": "^3.6.5",

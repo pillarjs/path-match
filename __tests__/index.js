@@ -75,7 +75,7 @@ describe('/:a/:b/:c*', function () {
     assert.deepEqual(params, {
       a: 'a',
       b: 'b',
-      c: ['c']
+      c: ['c'].join('/')
     })
   })
 
@@ -84,7 +84,7 @@ describe('/:a/:b/:c*', function () {
     assert.deepEqual(params, {
       a: 'a',
       b: 'b',
-      c: ['c', 'd']
+      c: ['c', 'd'].join('/')
     })
   })
 
@@ -93,7 +93,7 @@ describe('/:a/:b/:c*', function () {
     assert.deepEqual(params, {
       a: 'a',
       b: 'b',
-      c: ['c', 'd', 'e']
+      c: ['c', 'd', 'e'].join('/')
     })
   })
 })
@@ -111,7 +111,7 @@ describe('/:a/:b/:c+', function () {
     assert.deepEqual(params, {
       a: 'a',
       b: 'b',
-      c: ['c']
+      c: 'c'
     })
   })
 
@@ -120,7 +120,7 @@ describe('/:a/:b/:c+', function () {
     assert.deepEqual(params, {
       a: 'a',
       b: 'b',
-      c: ['c', 'd']
+      c: 'c/d'
     })
   })
 
@@ -129,7 +129,7 @@ describe('/:a/:b/:c+', function () {
     assert.deepEqual(params, {
       a: 'a',
       b: 'b',
-      c: ['c', 'd', 'e']
+      c: 'c/d/e'
     })
   })
 })
